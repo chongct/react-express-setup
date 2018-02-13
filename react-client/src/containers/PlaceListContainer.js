@@ -3,6 +3,8 @@ import ApiService from '../ApiService';
 import PlaceList from '../components/PlaceList';
 import PlaceForm from '../forms/PlaceForm';
 
+import Map from './Map';
+
 import { Container, Row, Col } from 'reactstrap';
 
 class PlaceListContainer extends Component{
@@ -40,7 +42,14 @@ class PlaceListContainer extends Component{
     return (
       <Container>
         <Row>
-          <Col md={{size: 6, offset: 3}}>
+          <Col md={{size: 10, offset: 1}}>
+              <div style={{width: '100%', height: '400px'}}>
+                <Map />
+              </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={{size: 10, offset: 1}}>
             <div className="place">
               <PlaceForm submitHandler={this.add} />
               <PlaceList places={this.state.places} />
